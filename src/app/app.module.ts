@@ -9,13 +9,15 @@ import { registerLocaleData } from '@angular/common';
 
 // Importa a locação em PT na aplicação
 import localePt from '@angular/common/locales/pt';
+import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing-module';
 
 // Seta a localização
 registerLocaleData(localePt, 'pt');
 
 @NgModule({
   declarations: [AppComponent, NovaTransferenciaComponent, ExtratoComponent],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt' },
     { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' },
